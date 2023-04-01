@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: Quicksand;
+  src: url(assets/fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: Quicksand;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  color: rgb(46, 35, 206);
+}
+
+.highlight {
+  background-color: rgb(235, 197, 235);
+  font-weight: bold;
+}

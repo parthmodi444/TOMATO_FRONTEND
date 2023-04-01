@@ -1,0 +1,43 @@
+.update-product-container {
+  width: 400px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inputfile {
+  display: none;
+}
+
+.image-label {
+  cursor: pointer;
+}
+
+.image-hint {
+  color: rgb(255, 255, 255);
+}
+.image-hint:hover,
+.image-label:hover {
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+.action-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .update-product-container {
+    width: 200px;
+    margin: 10px;
+  }
+}

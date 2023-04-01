@@ -1,0 +1,29 @@
+.itemContainer {
+  margin: auto;
+  height: 40px;
+  border-bottom: 1px dotted rgb(0, 0, 0);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemSubContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  color: rgb(66, 66, 66);
+  cursor: pointer;
+}

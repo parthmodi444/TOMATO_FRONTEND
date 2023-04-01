@@ -1,0 +1,63 @@
+<div class="products-main-container">
+  <div class="search-container">
+    <mat-form-field floatLabel="never" color="primary">
+      <input
+        class="toolbar-search"
+        [(ngModel)]="searchPattern"
+        type="text"
+        matInput
+        placeholder="Search products.."
+        (keyup)="fetchProductsBySearchPattern()"
+      />
+      <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="main-container">
+    <div class="cart-container">
+      <button class="btn" mat-flat-button (click)="cartStatusHandler()">
+        <mat-icon class="cart-btn">shopping_cart</mat-icon>
+        <mat-icon *ngIf="!cartStatus" class="cart-btn">arrow_right</mat-icon>
+        <mat-icon *ngIf="cartStatus" class="cart-btn">arrow_left</mat-icon>
+      </button>
+      <div
+        [ngClass]="{ cart: cartStatus == true }"
+        [ngClass]="{ hide: cartStatus == false }"
+        [ngClass]="{ show: cartStatus == true }"
+      >
+        <app-cart-item-list *ngIf="cartStatus"></app-cart-item-list>
+      </div>
+    </div>
+
+    <div class="products-list-container">
+      <button
+        class="btn"
+        mat-flat-button
+        *ngFor="let c of categories"
+        (click)="fetchProductsByCategory(c._id)"
+      >
+        {{ c.name }}
+      </button>
+      <button
+        class="btn get-all-btn"
+        mat-flat-button
+        (click)="fetchAllProducts()"
+      >
+        All Products
+      </button>
+
+      <div class="products">
+        <mat-progress-bar
+          *ngIf="!products"
+          mode="buffer"
+          color="accent"
+          strokeWidth="1"
+        ></mat-progress-bar>
+        <app-product-card
+          *ngFor="let p of products"
+          [product]="p"
+        ></app-product-card>
+      </div>
+    </div>
+  </div>
+</div>

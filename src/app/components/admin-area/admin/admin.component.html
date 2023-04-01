@@ -1,0 +1,40 @@
+<div class="admin-container">
+  <div class="search-container">
+    <mat-form-field floatLabel="never" color="primary">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="searchPattern"
+        placeholder="Search products.."
+        (keyup)="fetchProductsBySearchPattern()"
+      />
+      <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="product-nav-container">
+    <mat-form-field class="mat-categories">
+      <mat-label>Categories</mat-label>
+      <mat-select (selectionChange)="fetchProductsByCategory($event.value)">
+        <mat-option *ngFor="let c of categories" [value]="c._id">
+          {{ c.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="fetchAllProducts()">All Products</button>
+
+    <button mat-raised-button (click)="addProductDialog()">Add product</button>
+  </div>
+
+  <div class="products">
+    <mat-progress-bar
+      *ngIf="!products"
+      mode="buffer"
+      color="accent"
+      strokeWidth="1"
+    ></mat-progress-bar>
+    <app-product-card
+      *ngFor="let p of products"
+      [product]="p"
+    ></app-product-card>
+  </div>
+</div>

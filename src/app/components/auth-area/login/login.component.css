@@ -1,0 +1,18 @@
+.auth-container {
+  width: fit-content;
+  margin: 5% auto 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 10px;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

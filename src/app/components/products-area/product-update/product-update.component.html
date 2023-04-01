@@ -1,0 +1,86 @@
+<div class="update-product-container">
+  <b>Product Update: </b>
+  <form (ngSubmit)="updateProduct()" #productForm="ngForm">
+    <mat-form-field floatLabel="never" color="primary">
+      <label>Categories: </label>
+      <mat-select
+        name="category"
+        [(value)]="selected"
+        [(ngModel)]="product.categoryId"
+        required
+        #categoryBox="ngModel"
+        placeholder="Categories"
+      >
+        <mat-option disabled selected>Select...</mat-option>
+        <mat-option *ngFor="let c of categories" [value]="c._id">{{
+          c.name
+        }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="categoryBox.errors?.['required'] && categoryBox.touched"
+        >Missing category</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field floatLabel="never" color="primary">
+      <label>Name: </label>
+      <input
+        matInput
+        placeholder="Name"
+        type="text"
+        name="name"
+        [(ngModel)]="product.name"
+        required
+        #nameBox="ngModel"
+      />
+      <mat-error *ngIf="nameBox.errors?.['required'] && nameBox.touched"
+        >Missing name</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field floatLabel="never" color="primary">
+      <label>Price: </label>
+      <input
+        matInput
+        type="number"
+        name="price"
+        [(ngModel)]="product.price"
+        step="0.01"
+        min="0.01"
+        required
+        #priceBox="ngModel"
+      />
+      <mat-error *ngIf="priceBox.errors?.['required'] && priceBox.touched"
+        >Missing price</mat-error
+      >
+    </mat-form-field>
+
+    <label class="image-label" for="file">
+      <mat-icon>add_a_photo </mat-icon>
+      <input
+        type="file"
+        name="file"
+        id="file"
+        class="inputfile"
+        (change)="onFileChange($event)"
+        accept="image/png, image/jpeg"
+      />
+      <mat-hint class="image-hint"> Update image of product</mat-hint>
+      <br />
+      <small *ngIf="imageRef">{{ imageRef.name }}</small>
+    </label>
+
+    <br />
+
+    <div class="action-container">
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <button
+        mat-raised-button
+        mat-dialog-close
+        [disabled]="productForm.invalid"
+        type="submit"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>

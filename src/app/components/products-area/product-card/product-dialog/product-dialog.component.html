@@ -1,0 +1,44 @@
+<div class="dialog-container">
+  <div *ngIf="product" class="dialog-details-container">
+    <img class="dialog-pic" [src]="productImageUrl + product.imageName" />
+    <br />
+    <div class="details-container">
+      <b>{{ product.name }}</b>
+
+      <p>Price: {{ product.price }}$</p>
+
+      <small>Category: {{ product.category.name }}</small> <br />
+
+      <div *ngIf="!isAdmin && cart" class="quantity-container">
+        <b> Quantity: </b>
+        <mat-icon class="icon" (click)="decrementItem()"
+          >keyboard_arrow_down</mat-icon
+        >
+        <small> {{ quantity }}</small>
+
+        <mat-icon class="icon" (click)="incrementItem()"
+          >keyboard_arrow_up</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isAdmin" mat-dialog-actions class="mat-actions">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-button
+      mat-dialog-close
+      *ngIf="cart"
+      (click)="addProductToCart()"
+    >
+      Add To Cart
+    </button>
+
+    <div *ngIf="!cart">
+      
+      <button mat-button mat-dialog-close routerLink="./home">
+        Go Get Cart!
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="cart-items-container">
+  <mat-icon [matBadge]="items" matBadgePosition="after" matBadgeColor="primary"
+    >shopping_cart</mat-icon
+  >
+  <b>Your Shopping Cart.</b>
+  <hr />
+  <div class="items-container">
+    <mat-progress-bar
+      *ngIf="!cartItems"
+      mode="buffer"
+      color="accent"
+      strokeWidth="1"
+    ></mat-progress-bar>
+    <app-cart-item-card
+      *ngFor="let item of cartItems"
+      [cartItem]="item"
+    ></app-cart-item-card>
+  </div>
+
+  <hr />
+
+  <div class="total-price">
+    <h4>TOTAL PRICE: {{ totalPrice }} $</h4>
+  </div>
+  <button mat-raised-button routerLink="../cart/checkout">Check-Out!</button>
+  <br />
+  <button mat-raised-button (click)="removeAllItemsFromCart()">
+    Remove All Items!
+  </button>
+</div>

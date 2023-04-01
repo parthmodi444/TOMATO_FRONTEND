@@ -1,0 +1,20 @@
+<div class="header">
+  <img
+    src="../../../../assets/images/tomato-image.jpg"
+    alt="tomato-image"
+    routerLink="home"
+  />
+
+  <nav *ngIf="user && user.isAdmin == false">
+    <a mat-stroked-button routerLink="home">Home</a>
+    <a mat-stroked-button routerLink="products">Products</a>
+    <a mat-stroked-button routerLink="cart">Cart</a>
+  </nav>
+
+  <nav *ngIf="user && user.isAdmin">
+    <a mat-stroked-button routerLink="home">Home</a>
+    <a mat-stroked-button routerLink="admin">Admin</a>
+  </nav>
+
+  <app-auth-menu></app-auth-menu>
+</div>

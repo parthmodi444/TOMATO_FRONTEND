@@ -1,0 +1,20 @@
+<div class="itemContainer">
+  <p>{{ cartItem.name }}</p>
+
+  <div class="itemSubContainer">
+    <div class="quantity-container">
+      <mat-icon class="icon" (click)="decrementOneItem()"
+        >keyboard_arrow_down</mat-icon
+      >
+      <small> {{ cartItem.quantity }}</small>
+
+      <mat-icon class="icon" (click)="incrementOneItem()"
+        >keyboard_arrow_up</mat-icon
+      >
+    </div>
+
+    <small> {{ (cartItem.price * cartItem.quantity).toFixed(2) }}$ </small>
+
+    <mat-icon class="icon" (click)="deleteItem()">clear</mat-icon>
+  </div>
+</div>

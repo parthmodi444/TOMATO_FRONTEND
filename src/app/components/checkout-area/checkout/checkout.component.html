@@ -1,0 +1,145 @@
+<div class="search-container">
+  <mat-form-field floatLabel="never" color="primary">
+    <mat-label>Search</mat-label>
+    <input
+      class="toolbar-search"
+      [(ngModel)]="search"
+      type="text"
+      matInput
+      placeholder="Search products.."
+    />
+    <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
+  </mat-form-field>
+  <button mat-raised-button routerLink="../../products">
+    <mat-icon>arrow_back_ios</mat-icon>
+    Back to shop.
+  </button>
+</div>
+
+<div class="order-container">
+  <div class="cart-items-details">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let item of cartItems; let i = index">
+        <td>{{ i + 1 }}</td>
+        <ng-container>
+          <span [innerHTML]="item.name | highlightSearch: search"></span>
+        </ng-container>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price * item.quantity }} $</td>
+      </tr>
+    </table>
+    <p *ngIf="cartItems.length == 0">Your cart is still empty.</p>
+    <h4 class="total-price">TOTAL PRICE: {{ cartItems | totalPrice }}$</h4>
+  </div>
+
+  <div class="order-form-details">
+    <form (ngSubmit)="submitPayment($event)" #checkoutFormInfo="ngForm">
+      <h3>Shipping Details -</h3>
+
+      <mat-form-field floatLabel="never" color="primary">
+        <mat-select
+          placeholder="Choose City"
+          [(ngModel)]="shippingCity"
+          name="city"
+          required
+          #cityBox="ngModel"
+        >
+          <mat-option (click)="dblclick()">Select Default</mat-option>
+          <mat-option *ngFor="let c of cities" [value]="c.city">
+            {{ c.city }}
+          </mat-option>
+        </mat-select>
+
+        <mat-error *ngIf="(cityBox.touched) && cityBox.errors?.['required']"
+          >Missing City</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never" color="primary">
+        <input
+          matInput
+          (dblclick)="dblclick()"
+          type="string"
+          name="street"
+          placeholder="Street"
+          [(ngModel)]="shippingStreet"
+          required
+          minlength="1"
+          maxlength="100"
+          #streetBox="ngModel"
+        />
+
+        <mat-error *ngIf="streetBox.touched && streetBox.errors?.['required']"
+          >Missing Street</mat-error
+        >
+        <mat-error *ngIf="streetBox.touched && streetBox.errors?.['minlength']"
+          >Street too short</mat-error
+        >
+        <mat-error *ngIf="streetBox.touched && streetBox.errors?.['maxlength']"
+          >Street too long</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never" color="primary">
+        <input
+          matInput
+          type="number"
+          name="creditCard"
+          placeholder="Credit card number"
+          [(ngModel)]="creditCardNumber"
+          required
+          #creditCardBox="ngModel"
+          pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+        />
+
+        <mat-error
+          *ngIf="creditCardBox.touched && creditCardBox.errors?.['required']"
+          >Missing Credit Card</mat-error
+        >
+        <mat-error
+          *ngIf="creditCardBox.touched && creditCardBox.errors?.['pattern']"
+          >Credit Card number is not valid</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never" color="primary">
+        <input
+          (dateChange)="checkDate($event.value)"
+          matInput
+          [matDatepickerFilter]="myFilter"
+          [matDatepicker]="picker"
+          placeholder="Choose shipping date"
+          required
+          name="shippingDate"
+          [(ngModel)]="shippingDate"
+          #dateBox="ngModel"
+          [min]="minDate"
+        />
+
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="dateBox.touched && dateBox.errors?.['required']"
+          >Missing Date</mat-error
+        >
+        <small *ngIf="dateBox.touched && badShippingDate">
+          Too many shippings on this date. Try another.
+        </small>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        [disabled]="checkoutFormInfo.invalid || badShippingDate"
+      >
+        Submit.
+      </button>
+    </form>
+  </div>
+</div>

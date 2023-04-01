@@ -1,0 +1,237 @@
+<div class="auth-container">
+  <h2>Register</h2>
+
+  <div class="register-container">
+    <div class="box pre-register">
+      <p>Step #1</p>
+      <form (ngSubmit)="checkUserId()" #formInfo="ngForm">
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>E-mail: </mat-label>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="user.email"
+            [disabled]="stepOneOk == true"
+            required
+            minlength="4"
+            maxlength="100"
+            #emailBox="ngModel"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            matInput
+          />
+          <mat-hint>E-mail</mat-hint>
+
+          <mat-error *ngIf="emailBox.touched && emailBox.errors?.['required']"
+            >Missing Email</mat-error
+          >
+          <mat-error *ngIf="emailBox.touched && emailBox.errors?.['pattern']"
+            >Not a valid 'e-mail' form.</mat-error
+          >
+          <mat-error *ngIf="emailBox.touched && emailBox.errors?.['maxlength']"
+            >Email too long</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>User Id:</mat-label>
+          <input
+            type="string"
+            name="userId"
+            [(ngModel)]="user.userId"
+            [disabled]="stepOneOk == true"
+            required
+            minlength="7"
+            maxlength="14"
+            #userIdBox="ngModel"
+            pattern="^(0|[1-9][0-9]*)$"
+            matInput
+          />
+          <mat-hint>User Id</mat-hint>
+          <mat-error
+            *ngIf="(userIdBox.touched) && userIdBox.errors?.['required']"
+            >Missing User Id</mat-error
+          >
+          <mat-error
+            *ngIf="(userIdBox.touched) && userIdBox.errors?.['minlength']"
+            >User Id short</mat-error
+          >
+          <mat-error
+            *ngIf="(userIdBox.touched) && userIdBox.errors?.['pattern']"
+            >User Id must be numerical</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>Password: </mat-label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="user.password"
+            [disabled]="stepOneOk == true"
+            required
+            minlength="4"
+            maxlength="20"
+            #passwordBox="ngModel"
+            matInput
+            placeholder="password"
+            autocomplete="false"
+          />
+          <mat-hint>Password</mat-hint>
+
+          <mat-error
+            *ngIf="passwordBox.touched && passwordBox.errors?.['required']"
+            >Missing Password</mat-error
+          >
+          <mat-error
+            *ngIf="passwordBox.touched && passwordBox.errors?.['minlength']"
+            >Password too short</mat-error
+          >
+          <mat-error
+            *ngIf="passwordBox.touched && passwordBox.errors?.['maxlength']"
+            >Password too long</mat-error
+          >
+        </mat-form-field>
+
+        <button
+          [disabled]="stepOneOk"
+          mat-raised-button
+          [disabled]="formInfo.invalid"
+        >
+          Continue
+        </button>
+      </form>
+    </div>
+
+    <div *ngIf="stepOneOk" class="box register">
+      <p>Step #2</p>
+      <form (ngSubmit)="submit()">
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>First Name: </mat-label>
+          <input
+            type="text"
+            name="firstName"
+            [(ngModel)]="user.firstName"
+            required
+            minlength="2"
+            maxlength="50"
+            #firstNameBox="ngModel"
+            matInput
+          />
+          <mat-hint>First name</mat-hint>
+
+          <mat-error
+            *ngIf="(firstNameBox.touched) && firstNameBox.errors?.['required']"
+            >Missing First Name</mat-error
+          >
+          <mat-error
+            *ngIf="(firstNameBox.touched) && firstNameBox.errors?.['minlength']"
+            >First Name too short</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>Last Name: </mat-label>
+          <input
+            type="text"
+            name="lastName"
+            [(ngModel)]="user.lastName"
+            required
+            minlength="2"
+            maxlength="50"
+            #lastNameBox="ngModel"
+            matInput
+          />
+          <mat-hint>Last name</mat-hint>
+
+          <mat-error
+            *ngIf="(lastNameBox.touched) && lastNameBox.errors?.['required']"
+            >Missing Last Name</mat-error
+          >
+          <mat-error
+            *ngIf="(lastNameBox.touched) && lastNameBox.errors?.['minlength']"
+            >Last Name too short</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-select
+            placeholder="Choose City"
+            [(ngModel)]="user.city"
+            name="city"
+            required
+            #cityBox="ngModel"
+          >
+            <mat-option disabled>Select City</mat-option>
+            <mat-option *ngFor="let c of cities" [value]="c.city">
+              {{ c.city }}
+            </mat-option>
+          </mat-select>
+          <mat-hint>City</mat-hint>
+
+          <mat-error *ngIf="(cityBox.touched) && cityBox.errors?.['required']"
+            >Missing City</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>Street: </mat-label>
+          <input
+            type="text"
+            name="username"
+            [(ngModel)]="user.street"
+            required
+            minlength="2"
+            maxlength="50"
+            #streetBox="ngModel"
+            matInput
+          />
+          <mat-hint>Street</mat-hint>
+          <mat-error
+            *ngIf="(streetBox.touched) && streetBox.errors?.['required']"
+            >Missing Street</mat-error
+          >
+          <mat-error
+            *ngIf="(streetBox.touched) && streetBox.errors?.['minlength']"
+            >Street too short</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field floatLabel="never" color="primary">
+          <mat-label>Confirm Password: </mat-label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="confirmPassword"
+            minlength="4"
+            maxlength="20"
+            #confirmPasswordBox="ngModel"
+            matInput
+          />
+          <mat-hint>Confirm Password</mat-hint>
+          <mat-error
+            *ngIf="confirmPasswordBox.touched && confirmPasswordBox.errors?.['required']"
+            >Missing Password</mat-error
+          >
+          <mat-error
+            *ngIf="confirmPasswordBox.touched && confirmPasswordBox.errors?.['minlength']"
+            >Password too short</mat-error
+          >
+          <mat-error
+            *ngIf="confirmPasswordBox.touched && confirmPasswordBox.errors?.['maxlength']"
+            >Password too long</mat-error
+          >
+        </mat-form-field>
+
+        <button mat-raised-button>Register</button>
+      </form>
+    </div>
+  </div>
+  <div>
+    <small>Already registered? </small>
+    <a class="auth-btn" routerLink="/login"> Login </a>
+  </div>
+</div>
+<button mat-raised-button routerLink="../home">
+  <mat-icon>arrow_back_ios</mat-icon>
+  Go Back
+</button>

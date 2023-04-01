@@ -1,0 +1,67 @@
+<div class="auth-container">
+  <h2>Login</h2>
+
+  <form (ngSubmit)="submit()" #formInfo="ngForm">
+    <mat-form-field floatLabel="never" color="primary">
+      <mat-label>E-mail: </mat-label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="credentials.email"
+        required
+        minlength="4"
+        maxlength="100"
+        #emailBox="ngModel"
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+        matInput
+      />
+      <mat-hint>E-mail</mat-hint>
+      <mat-error *ngIf="emailBox.touched && emailBox.errors?.['required']"
+        >Missing Email</mat-error
+      >
+      <mat-error *ngIf="emailBox.touched && emailBox.errors?.['pattern']"
+        >Not a valid 'e-mail' form.</mat-error
+      >
+      <mat-error *ngIf="emailBox.touched && emailBox.errors?.['maxlength']"
+        >Email too long</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field floatLabel="never" color="primary">
+      <mat-label>Password: </mat-label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="credentials.password"
+        required
+        minlength="4"
+        maxlength="20"
+        #passwordBox="ngModel"
+        matInput
+      />
+      <mat-hint>Password</mat-hint>
+      <mat-error *ngIf="passwordBox.touched && passwordBox.errors?.['required']"
+        >Missing Password</mat-error
+      >
+      <mat-error
+        *ngIf="passwordBox.touched && passwordBox.errors?.['minlength']"
+        >Password too short</mat-error
+      >
+      <mat-error
+        *ngIf="passwordBox.touched && passwordBox.errors?.['maxlength']"
+        >Password too long</mat-error
+      >
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="formInfo.invalid">Login</button>
+  </form>
+
+  <div>
+    <small>Not registered? </small>
+    <a class="auth-btn" routerLink="/register"> Register </a>
+  </div>
+</div>
+<button mat-raised-button routerLink="../home">
+  <mat-icon>arrow_back_ios</mat-icon>
+  Go Back
+</button>

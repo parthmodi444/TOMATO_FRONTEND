@@ -1,0 +1,116 @@
+<div class="home-container">
+  <div class="home-div">
+    <!-- Not-Logged-In -->
+    <div class="home-user" *ngIf="!user">
+      <p>Hello friend, you are not logged in.</p>
+      <div>
+        <button mat-raised-button routerLink="/login">Login</button>
+        <button mat-raised-button routerLink="/register">Register</button>
+      </div>
+    </div>
+
+    <!-- ADMIN -->
+    <div class="home-user" *ngIf="user && user.isAdmin">
+      <p>Hello Admin, saap ?!.</p>
+      <div>
+        <button mat-raised-button routerLink="/admin">Admin Page</button>
+      </div>
+    </div>
+
+    <!-- USER -->
+    <div class="home-user" *ngIf="user && !user.isAdmin">
+      <strong>
+        Hello {{ user.firstName }},<br />
+        You are logged in.
+      </strong>
+
+      <!-- First time shop. -->
+      <div *ngIf="!cart && !checkout && !user.isAdmin">
+        <p>Welcome! Begin your first purchase.</p>
+        <button
+          (click)="createCart()"
+          mat-raised-button
+          routerLink="../products"
+        >
+          New Cart
+        </button>
+      </div>
+
+      <!-- Been here before. -->
+      <div *ngIf="!cart && checkout && !user.isAdmin">
+        <p>
+          Your last checkout was in -
+          <span> {{ checkout.createdAt | date }} </span>.
+        </p>
+        <button
+          (click)="createCart()"
+          mat-raised-button
+          routerLink="../products"
+        >
+          New Cart
+        </button>
+      </div>
+
+      <!-- Unfinished business. -->
+      <div *ngIf="cart">
+        <p>You have an open cart.</p>
+        <button mat-raised-button routerLink="../products">
+          Continue shopping
+        </button>
+      </div>
+
+      <!-- <button mat-raised-button>New Cart</button> -->
+    </div>
+  </div>
+
+  <div class="home-about home-div">
+    <p>
+      Welcome to <strong>Tomato!</strong><br />
+      Tomato is an online-market shopping app. <br /><br />
+      Frontend: Angular , Redux, Angular material, HTML , CSS , JavaScript ,
+      TypeScript <br /><br />
+      Backend: NodeJs , TypeScript , Express , RESTful API <br /><br />
+      DB: MongoDB , Mongoose
+    </p>
+
+    <div class="icons">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/omribenshalom"
+      >
+        <img
+          src="../../../../assets/icons/github-icon.png"
+          alt="github icon"
+          style="height: 30px; width: 30px; margin: 1px"
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/omri-ben-shalom"
+      >
+        <img
+          src="../../../../assets/icons/linkedin-icon.png"
+          alt="linkedin icon"
+          style="height: 30px; width: 30px; margin: 1px"
+        />
+      </a>
+      <p>&copy; Omri Ben Shalom.</p>
+    </div>
+  </div>
+
+  <div class="home-data home-div">
+    <img
+      class="tomato-image"
+      src="../../../../assets/images/tomato perfect.jpg"
+      alt="groceries image"
+    />
+    <div>
+      <b
+        >Total Products in Tomato: {{ numberOfProducts }} <br />
+        Total Orders in Tomato: {{ numberOfOrders }}</b
+      >
+    </div>
+  </div>
+</div>
