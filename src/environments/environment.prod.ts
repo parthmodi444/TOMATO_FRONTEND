@@ -1,44 +1,44 @@
 export const environment = {
   production: true,
 
-  // https://online-shop-by-omri.herokuapp.com/
+  // https://tomatobackend-production.up.railway.app/
 
   //Auth URL's.
   preRegisterUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/auth/pre-register/',
-  registerUrl: 'https://online-shop-by-omri.herokuapp.com/api/auth/register/',
-  loginUrl: 'https://online-shop-by-omri.herokuapp.com/api/auth/login/',
+    'https://tomatobackend-production.up.railway.app/api/auth/pre-register/',
+  registerUrl: 'https://tomatobackend-production.up.railway.app/api/auth/register/',
+  loginUrl: 'https://tomatobackend-production.up.railway.app/api/auth/login/',
 
   //Categories URL's.
   catgoriesUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/products/categories/',
+    'https://tomatobackend-production.up.railway.app/api/products/categories/',
 
   //Products URL's.
-  productsUrl: 'https://online-shop-by-omri.herokuapp.com/api/products/',
+  productsUrl: 'https://tomatobackend-production.up.railway.app/api/products/',
   productsByCategoryUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/products/products-by-category/',
+    'https://tomatobackend-production.up.railway.app/api/products/products-by-category/',
   productImageUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/products/images/',
+    'https://tomatobackend-production.up.railway.app/api/products/images/',
   numberOfProductsUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/products/number-of-products/',
+    'https://tomatobackend-production.up.railway.app/api/products/number-of-products/',
   productsSearchByPatternUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/products/products-search/',
+    'https://tomatobackend-production.up.railway.app/api/products/products-search/',
 
   //Carts URL's.
-  cartUrl: 'https://online-shop-by-omri.herokuapp.com/api/cart/',
-  cartNewUrl: 'https://online-shop-by-omri.herokuapp.com/api/cart/new-cart/',
+  cartUrl: 'https://tomatobackend-production.up.railway.app/api/cart/',
+  cartNewUrl: 'https://tomatobackend-production.up.railway.app/api/cart/new-cart/',
   cartItemsUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/cart/cart-items/',
+    'https://tomatobackend-production.up.railway.app/api/cart/cart-items/',
   removeAllCartItemsUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/cart/cart-items/remove-all/',
+    'https://tomatobackend-production.up.railway.app/api/cart/cart-items/remove-all/',
 
   //Order URL.
-  orderUrl: 'https://online-shop-by-omri.herokuapp.com/api/order/',
+  orderUrl: 'https://tomatobackend-production.up.railway.app/api/order/',
   orderCheckDateUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/order/check-date/',
-  orderCitiesUrl: 'https://online-shop-by-omri.herokuapp.com/api/order/cities/',
+    'https://tomatobackend-production.up.railway.app/api/order/check-date/',
+  orderCitiesUrl: 'https://tomatobackend-production.up.railway.app/api/order/cities/',
   numberOfOrdersUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/order/number-of-orders/',
+    'https://tomatobackend-production.up.railway.app/api/order/number-of-orders/',
   lastOrderUrl:
-    'https://online-shop-by-omri.herokuapp.com/api/order/last-order/',
+    'https://tomatobackend-production.up.railway.app/api/order/last-order/',
 };
