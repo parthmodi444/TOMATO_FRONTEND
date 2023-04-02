@@ -45,7 +45,7 @@ export class CheckoutDialogComponent implements OnInit {
       },
       stamp: {
         inAllPages: true,
-        src: 'assets\images\qrcode.png',
+        src: 'assets/images/qrcode.png',
         type: 'JPG',
         width: 20,
         height: 20,
