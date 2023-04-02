@@ -56,10 +56,10 @@ export class CheckoutDialogComponent implements OnInit {
       },
       business: {
         name: 'Tomato',
-        address: 'Toma To, Central, Israel',
-        phone: '(+972) 054 20 22 23 6',
-        email: 'omribenshalom@gmail.com',
-        website: 'www.tomato-online.co.il',
+        address: 'Mumbai',
+        phone: '8291035339',
+        email: 'modip1959@gmail.com',
+        website: 'www.parthmodi.com',
       },
       contact: {
         label: 'Invoice issued for:',
@@ -115,8 +115,8 @@ export class CheckoutDialogComponent implements OnInit {
         ],
         invDescLabel: "Tomato's Note",
         invDesc: `
-        Thank you for purchasing with Tomato! Tomato is an online-market shopping app built as an angular project by Omri Ben Shalom. Tech used to build the app - Frontend: Angular , Redux, Angular material, HTML , CSS , JavaScript ,TypeScript. Backend: NodeJs , TypeScript , Express , RESTful API. DB: MongoDB , Mongoose
-      `,
+        Thank you for purchasing with Tomato! Tomato is an online-market shopping app built as an angular project by Parth Modi. `
+      ,
       },
       footer: {
         text: 'The invoice is fictional Tomato.',
