@@ -45,7 +45,7 @@ export class CheckoutDialogComponent implements OnInit {
       },
       stamp: {
         inAllPages: true,
-        src: 'https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg',
+        src: 'assets\images\qrcode.png',
         type: 'JPG',
         width: 20,
         height: 20,
