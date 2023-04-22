@@ -1,44 +1,44 @@
 export const environment = {
   production: true,
 
-  // https://https://friendly-ox-wrap.cyclic.app/
+  // https://https://encouraging-puce-harp-seal.cyclic.app/
 
   //Auth URL's.
   preRegisterUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/auth/pre-register/',
-  registerUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/auth/register/',
-  loginUrl: 'https://friendly-ox-wrap.cyclic.app/api/auth/login/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/auth/pre-register/',
+  registerUrl: 'https://https://encouraging-puce-harp-seal.cyclic.app/api/auth/register/',
+  loginUrl: 'https://encouraging-puce-harp-seal.cyclic.app/api/auth/login/',
 
   //Categories URL's.
   catgoriesUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/products/categories/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/products/categories/',
 
   //Products URL's.
-  productsUrl: 'https://friendly-ox-wrap.cyclic.app/api/products/',
+  productsUrl: 'https://encouraging-puce-harp-seal.cyclic.app/api/products/',
   productsByCategoryUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/products/products-by-category/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/products/products-by-category/',
   productImageUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/products/images/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/products/images/',
   numberOfProductsUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/products/number-of-products/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/products/number-of-products/',
   productsSearchByPatternUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/products/products-search/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/products/products-search/',
 
   //Carts URL's.
-  cartUrl: 'https://friendly-ox-wrap.cyclic.app/api/cart/',
-  cartNewUrl: 'https://friendly-ox-wrap.cyclic.app/api/cart/new-cart/',
+  cartUrl: 'https://encouraging-puce-harp-seal.cyclic.app/api/cart/',
+  cartNewUrl: 'https://encouraging-puce-harp-seal.cyclic.app/api/cart/new-cart/',
   cartItemsUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/cart/cart-items/',
   removeAllCartItemsUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/remove-all/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/cart/cart-items/remove-all/',
 
   //Order URL.
-  orderUrl: 'https://friendly-ox-wrap.cyclic.app/api/order/',
+  orderUrl: 'https://encouraging-puce-harp-seal.cyclic.app/api/order/',
   orderCheckDateUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/order/check-date/',
-  orderCitiesUrl: 'https://friendly-ox-wrap.cyclic.app/api/order/cities/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/order/check-date/',
+  orderCitiesUrl: 'https://encouraging-puce-harp-seal.cyclic.app/api/order/cities/',
   numberOfOrdersUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/order/number-of-orders/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/order/number-of-orders/',
   lastOrderUrl:
-    'https://friendly-ox-wrap.cyclic.app/api/order/last-order/',
+    'https://encouraging-puce-harp-seal.cyclic.app/api/order/last-order/',
 };
