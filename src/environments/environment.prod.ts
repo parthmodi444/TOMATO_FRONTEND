@@ -1,44 +1,44 @@
 export const environment = {
   production: true,
 
-  // https://tomatobackend-production.up.railway.app/
+  // https://https://friendly-ox-wrap.cyclic.app/
 
   //Auth URL's.
   preRegisterUrl:
-    'https://tomatobackend-production.up.railway.app/api/auth/pre-register/',
-  registerUrl: 'https://tomatobackend-production.up.railway.app/api/auth/register/',
-  loginUrl: 'https://tomatobackend-production.up.railway.app/api/auth/login/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/auth/pre-register/',
+  registerUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/auth/register/',
+  loginUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/auth/login/',
 
   //Categories URL's.
   catgoriesUrl:
-    'https://tomatobackend-production.up.railway.app/api/products/categories/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/products/categories/',
 
   //Products URL's.
-  productsUrl: 'https://tomatobackend-production.up.railway.app/api/products/',
+  productsUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/products/',
   productsByCategoryUrl:
-    'https://tomatobackend-production.up.railway.app/api/products/products-by-category/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/products/products-by-category/',
   productImageUrl:
-    'https://tomatobackend-production.up.railway.app/api/products/images/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/products/images/',
   numberOfProductsUrl:
-    'https://tomatobackend-production.up.railway.app/api/products/number-of-products/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/products/number-of-products/',
   productsSearchByPatternUrl:
-    'https://tomatobackend-production.up.railway.app/api/products/products-search/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/products/products-search/',
 
   //Carts URL's.
-  cartUrl: 'https://tomatobackend-production.up.railway.app/api/cart/',
-  cartNewUrl: 'https://tomatobackend-production.up.railway.app/api/cart/new-cart/',
+  cartUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/cart/',
+  cartNewUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/cart/new-cart/',
   cartItemsUrl:
-    'https://tomatobackend-production.up.railway.app/api/cart/cart-items/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/',
   removeAllCartItemsUrl:
-    'https://tomatobackend-production.up.railway.app/api/cart/cart-items/remove-all/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/remove-all/',
 
   //Order URL.
-  orderUrl: 'https://tomatobackend-production.up.railway.app/api/order/',
+  orderUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/order/',
   orderCheckDateUrl:
-    'https://tomatobackend-production.up.railway.app/api/order/check-date/',
-  orderCitiesUrl: 'https://tomatobackend-production.up.railway.app/api/order/cities/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/order/check-date/',
+  orderCitiesUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/order/cities/',
   numberOfOrdersUrl:
-    'https://tomatobackend-production.up.railway.app/api/order/number-of-orders/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/order/number-of-orders/',
   lastOrderUrl:
-    'https://tomatobackend-production.up.railway.app/api/order/last-order/',
+    'https://https://friendly-ox-wrap.cyclic.app/api/order/last-order/',
 };
