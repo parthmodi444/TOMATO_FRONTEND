@@ -5,40 +5,40 @@ export const environment = {
 
   //Auth URL's.
   preRegisterUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/auth/pre-register/',
+    'https://friendly-ox-wrap.cyclic.app/api/auth/pre-register/',
   registerUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/auth/register/',
-  loginUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/auth/login/',
+  loginUrl: 'https://friendly-ox-wrap.cyclic.app/api/auth/login/',
 
   //Categories URL's.
   catgoriesUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/products/categories/',
+    'https://friendly-ox-wrap.cyclic.app/api/products/categories/',
 
   //Products URL's.
-  productsUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/products/',
+  productsUrl: 'https://friendly-ox-wrap.cyclic.app/api/products/',
   productsByCategoryUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/products/products-by-category/',
+    'https://friendly-ox-wrap.cyclic.app/api/products/products-by-category/',
   productImageUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/products/images/',
+    'https://friendly-ox-wrap.cyclic.app/api/products/images/',
   numberOfProductsUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/products/number-of-products/',
+    'https://friendly-ox-wrap.cyclic.app/api/products/number-of-products/',
   productsSearchByPatternUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/products/products-search/',
+    'https://friendly-ox-wrap.cyclic.app/api/products/products-search/',
 
   //Carts URL's.
-  cartUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/cart/',
-  cartNewUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/cart/new-cart/',
+  cartUrl: 'https://friendly-ox-wrap.cyclic.app/api/cart/',
+  cartNewUrl: 'https://friendly-ox-wrap.cyclic.app/api/cart/new-cart/',
   cartItemsUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/',
+    'https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/',
   removeAllCartItemsUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/remove-all/',
+    'https://friendly-ox-wrap.cyclic.app/api/cart/cart-items/remove-all/',
 
   //Order URL.
-  orderUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/order/',
+  orderUrl: 'https://friendly-ox-wrap.cyclic.app/api/order/',
   orderCheckDateUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/order/check-date/',
-  orderCitiesUrl: 'https://https://friendly-ox-wrap.cyclic.app/api/order/cities/',
+    'https://friendly-ox-wrap.cyclic.app/api/order/check-date/',
+  orderCitiesUrl: 'https://friendly-ox-wrap.cyclic.app/api/order/cities/',
   numberOfOrdersUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/order/number-of-orders/',
+    'https://friendly-ox-wrap.cyclic.app/api/order/number-of-orders/',
   lastOrderUrl:
-    'https://https://friendly-ox-wrap.cyclic.app/api/order/last-order/',
+    'https://friendly-ox-wrap.cyclic.app/api/order/last-order/',
 };
